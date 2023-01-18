@@ -1,0 +1,31 @@
+<sly data-sly-use.homeBanner="com.ey.capstone.core.models.HomeBannerModel"/>
+
+<div class="container-fluid paddding mb-5">
+    <div class="row mx-0">
+        <div class="col-md-6 col-12 paddding animate-box" data-animate-effect="fadeIn" data-sly-list.bannerItem="${homeBanner.bannerList}">
+            <div class="fh5co_suceefh5co_height" data-sly-test="${bannerItemList.first}">
+				<img src="${bannerItem.bannerImage}" alt="img"/>
+                <div class="fh5co_suceefh5co_height_position_absolute"></div>
+                <div class="fh5co_suceefh5co_height_position_absolute_font">
+                    <div class=""><a href="${bannerItem.pagePath}.html" class="color_fff"> <i class="fa fa-clock-o"></i>&nbsp;&nbsp;${bannerItem.createdDateStr}
+                    </a></div>
+                    <div class=""><a href="${bannerItem.pagePath}.html" class="fh5co_good_font"> ${bannerItem.bannerText} </a></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row" data-sly-list.bannerItem="${homeBanner.bannerList}">
+                <div class="col-md-6 col-6 paddding animate-box" data-animate-effect="fadeIn" data-sly-test="${!bannerItemList.first}">
+                    <div class="fh5co_suceefh5co_height_2">
+						<img src="${bannerItem.bannerImage}" alt="img"/>
+                        <div class="fh5co_suceefh5co_height_position_absolute"></div>
+                        <div class="fh5co_suceefh5co_height_position_absolute_font_2">
+                            <div class=""><a href="${bannerItem.pagePath}.html" class="color_fff"> <i class="fa fa-clock-o"></i>&nbsp;&nbsp;${bannerItem.createdDateStr}</a></div>
+                            <div class=""><a href="${bannerItem.pagePath}.html" class="fh5co_good_font_2">${bannerItem.bannerText}</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
