@@ -14,6 +14,8 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.ey.capstone.core.models.ArticleBannerModel;
 import com.ey.capstone.core.services.TrendingArticleService;
@@ -21,6 +23,7 @@ import com.ey.capstone.core.services.TrendingArticleService;
 @Component(service = TrendingArticleService.class, immediate = true)
 public class TrendingArticleServiceImpl implements TrendingArticleService {
 
+	private static final Logger LOG = LoggerFactory.getLogger(TrendingArticleServiceImpl.class);
 	@Reference
 	ResourceResolverFactory factory;
 
@@ -30,11 +33,11 @@ public class TrendingArticleServiceImpl implements TrendingArticleService {
 		List<ArticleBannerModel> bannerList = new ArrayList<>();
 
 		try (ResourceResolver resolver = getResourceResolver()) {
-			String query = "SELECT * FROM [cq:Page] AS s WHERE ISDESCENDANTNODE([/content/capstone/us/articles])  order by s.[jcr:content/jcr:created] desc";
+			String query = "SELECT * FROM [cq:Page] AS s WHERE ISDESCENDANTNODE([/content/capstone/us])  order by s.[jcr:content/jcr:created] desc";
 			Iterator<Resource> result = resolver.findResources(query,Query.JCR_SQL2);
 
 			while (result.hasNext()) {
-				Resource resource = (Resource) result.next();
+				Resource resource = result.next();
 				Resource articleBannerResource = resolver
 						.getResource(resource.getPath() + "/jcr:content/root/container/article_banner");
 				if (articleBannerResource != null) {
@@ -45,6 +48,8 @@ public class TrendingArticleServiceImpl implements TrendingArticleService {
 							bannerList.add(articleBanner);
 						}
 					}
+				} else{
+					LOG.info("banner article is empty");
 				}
 			}
 		}

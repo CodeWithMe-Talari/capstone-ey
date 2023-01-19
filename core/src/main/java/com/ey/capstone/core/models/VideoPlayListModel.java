@@ -20,12 +20,17 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.ey.capstone.core.dto.YoutubeVideoResponse;
 
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class VideoPlayListModel {
+
+
+	private static final Logger LOG = LoggerFactory.getLogger(VideoPlayListModel.class);
 
 	@ValueMapValue
 	private String[] youTubeLinks;
@@ -48,6 +53,7 @@ public class VideoPlayListModel {
 								JsonObject youtubeResponse = jsonReader.readObject();
 								YoutubeVideoResponse responseDto = new YoutubeVideoResponse();
 								responseDto.setHtml(youtubeResponse.getString("html"));
+								LOG.info("inside html content youtubeLink"+responseDto);
 								responseDto.setTitle(youtubeResponse.getString("title"));
 								responseDto.setThumbnailUrl(youtubeResponse.getString("thumbnail_url"));
 								videoList.add(responseDto);
@@ -57,6 +63,7 @@ public class VideoPlayListModel {
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
+				LOG.info("VideoPlayListModel error");
 			}
 		}
 	}

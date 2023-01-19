@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
-    jcr:title="Video PlayList Component"
+    jcr:title="Properties"
     sling:resourceType="cq/gui/components/authoring/dialog">
     <content
         jcr:primaryType="nt:unstructured"
@@ -15,7 +15,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
                         fieldDescription="Link to YouTube Video&#xa;Eg: https://www.youtube.com/watch?v=29cGh-5WqCo"
-                        fieldLabel="Youtube Links">
+                        fieldLabel="YouTube Links">
                         <field
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"

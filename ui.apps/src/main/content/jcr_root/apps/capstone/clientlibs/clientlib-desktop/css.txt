@@ -1,7 +1,9 @@
-css/media_query.css
-css/bootstrap.css
-css/font-awesome.min.css
-css/animate.css
-css/owl.carousel.css
-css/owl.theme.default.css
-css/style_1.css
+#base=css
+media_query.css
+bootstrap.css
+font-awesome.css
+animate.css
+owl.carousel.css
+owl.theme.default.css
+style_1.css
+
