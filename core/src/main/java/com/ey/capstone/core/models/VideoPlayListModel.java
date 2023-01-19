@@ -55,7 +55,6 @@ public class VideoPlayListModel {
 					}
 				}
 			} catch (IOException e) {
-
 				e.printStackTrace();
 			}
 		}
