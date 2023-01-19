@@ -21,7 +21,8 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
-import com.ey.capstone.core.entity.YoutubeVideoResponse;
+import com.ey.capstone.core.dto.YoutubeVideoResponse;
+
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class VideoPlayListModel {
@@ -41,7 +42,7 @@ public class VideoPlayListModel {
 					HttpGet request = new HttpGet("https://www.youtube.com/oembed?url="+youtubeLink);
 					try (CloseableHttpResponse response = httpClient.execute(request)) {
 						HttpEntity entity = response.getEntity();
-						if (entity != null) {
+							if (entity != null) {
 							String result = EntityUtils.toString(entity);
 							try (JsonReader jsonReader = Json.createReader(new StringReader(result))) {
 								JsonObject youtubeResponse = jsonReader.readObject();

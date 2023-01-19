@@ -1,4 +1,4 @@
-package com.ey.capstone.core.entity;
+package com.ey.capstone.core.dto;
 
 public class YoutubeVideoResponse {
 

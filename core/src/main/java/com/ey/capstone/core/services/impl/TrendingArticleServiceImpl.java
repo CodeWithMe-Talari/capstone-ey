@@ -62,7 +62,7 @@ public class TrendingArticleServiceImpl implements TrendingArticleService {
 		} catch (LoginException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return resolver;
 	}
 
 }
