@@ -13,9 +13,14 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
+/**
+ *      @author Talari Poornachander
+ * 
+ *      Sling Model to fetch  Home Banner Component properties
+ *
+ */
 @Model(adaptables = { Resource.class,
 		SlingHttpServletRequest.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-
 public class HomeBannerModel {
 
 	@ValueMapValue

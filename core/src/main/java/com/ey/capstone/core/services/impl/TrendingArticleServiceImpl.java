@@ -20,6 +20,13 @@ import org.slf4j.LoggerFactory;
 import com.ey.capstone.core.models.ArticleBannerModel;
 import com.ey.capstone.core.services.TrendingArticleService;
 
+
+/**
+ *      @author Talari Poornachander
+ * 
+ *      Service implementation class for TrendingArticlesSerivce Service interface
+ *
+ */
 @Component(service = TrendingArticleService.class, immediate = true)
 public class TrendingArticleServiceImpl implements TrendingArticleService {
 
@@ -27,6 +34,11 @@ public class TrendingArticleServiceImpl implements TrendingArticleService {
 	@Reference
 	ResourceResolverFactory factory;
 
+	/**
+	 *     To get list of articles which are created recently
+	 *     based on jcr:createdDate of the page
+	 */
+	
 	@Override
 	public List<ArticleBannerModel> getTrendingArticles() {
 
@@ -56,6 +68,10 @@ public class TrendingArticleServiceImpl implements TrendingArticleService {
 		return bannerList;
 	}
 
+	/**
+	 *     To return resolver for Trending Article Service
+	 */
+	
 	@Override
 	public ResourceResolver getResourceResolver() {
 		ResourceResolver resolver = null;

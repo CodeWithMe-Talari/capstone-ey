@@ -11,6 +11,12 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
+/**
+ *      @author Talari Poornachander
+ * 
+ *      Sling Model to fetch Article Banner Component properties
+ *
+ */
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ArticleBannerModel {
 	

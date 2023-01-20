@@ -25,7 +25,12 @@ import org.slf4j.LoggerFactory;
 
 import com.ey.capstone.core.dto.YoutubeVideoResponse;
 
-
+/**
+ *      @author Talari Poornachander
+ * 
+ *      Sling Model to fetch  Video Playlist Component properties
+ *
+ */
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class VideoPlayListModel {
 

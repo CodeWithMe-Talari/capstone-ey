@@ -12,6 +12,13 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import com.ey.capstone.core.services.TrendingArticleService;
 
+/**
+ *      @author Talari Poornachander
+ * 
+ *      Sling Model to fetch Trending Articles Component properties
+ *
+ */
+
 @Model(adaptables = Resource.class,
 		defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class TrendingArticleModel {
