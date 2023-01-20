@@ -58,7 +58,6 @@ public class VideoPlayListModel {
 								JsonObject youtubeResponse = jsonReader.readObject();
 								YoutubeVideoResponse responseDto = new YoutubeVideoResponse();
 								responseDto.setHtml(youtubeResponse.getString("html"));
-								LOG.info("inside html content youtubeLink"+responseDto);
 								responseDto.setTitle(youtubeResponse.getString("title"));
 								responseDto.setThumbnailUrl(youtubeResponse.getString("thumbnail_url"));
 								videoList.add(responseDto);
